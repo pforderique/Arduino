@@ -1,3 +1,4 @@
+//Use this one for the Video Tutorial and the app that was created
 #include<Servo.h>
 Servo s;
 char data = 0;                //Variable for storing received data
@@ -16,7 +17,7 @@ void loop()
     Serial.print("\n");        //New line
   }
 
-  if (data == '1') {          //Checks whether value of data is equal to 1
+  if (data == '1') {          //Checks whether value of data is equal to 1 ---- corresponds to byte #49
     digitalWrite(13, HIGH);  //If value is 1 then LED turns ON
     s.write(180);
   } else if (data == '0') {     //Checks whether value of data is equal to 0
