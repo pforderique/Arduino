@@ -1,5 +1,6 @@
 #include <Blink.h>
 
+
 /*
  * This is is a test project to make sure that it uploads correctly 
  * to GitHub and to see where it saves my code
@@ -8,7 +9,7 @@
  */
  
 
-Blink led(13);
+Blink led(3);
 
 void setup() {
 
