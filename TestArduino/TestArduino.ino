@@ -9,12 +9,16 @@
  */
  
 
-Blink led(3);
+Blink led(13);
 
 void setup() {
-
+  pinMode(5,OUTPUT);
 }
 
 void loop() {
-  led.blink(500);
+  //led.blink(500);
+  analogWrite(5,255);
+  delay(50);
+  analogWrite(5,0) ;
+  delay(50);
 }
