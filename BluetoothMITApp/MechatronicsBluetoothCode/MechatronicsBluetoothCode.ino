@@ -7,7 +7,7 @@
  * 
  */
  
-#define ledPin 7
+#define ledPin 6
 int state = 0;
 void setup() {
  pinMode(ledPin, OUTPUT);
@@ -16,16 +16,18 @@ void setup() {
 }
 void loop() {
  if(Serial.available() > 0){ // Checks whether data is comming from the serial port
- state = Serial.read(); // Reads the data from the serial port
+ state = (int) Serial.read(); // Reads the data from the serial port
  }
- if (state == '0') {
+ if (state == 0) {
  digitalWrite(ledPin, LOW); // Turn LED OFF
  Serial.println("LED: OFF"); // Send back, to the phone, the String "LED: ON"
- state = 0;
+ state = 9;
  }
- else if (state == '1') {
+ else if (state == 120) {
  digitalWrite(ledPin, HIGH);
  Serial.println("LED: ON");;
- state = 0;
- } 
+ state = 9;
+ }
+ Serial.print("State: ");
+ Serial.println(state);
 }

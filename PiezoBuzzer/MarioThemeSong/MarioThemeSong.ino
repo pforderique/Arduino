@@ -198,10 +198,11 @@ int underworld_tempo[] = {
   3, 3, 3
 };
 
+const int led = 7;
 void setup(void)
 {
   pinMode(3, OUTPUT);//buzzer
-  pinMode(13, OUTPUT);//led indicator when singing a note
+  pinMode(led, OUTPUT);//led indicator when singing a note
 
 }
 void loop()
@@ -264,7 +265,7 @@ void sing(int s) {
 }
 
 void buzz(int targetPin, long frequency, long length) {
-  digitalWrite(13, HIGH);
+  digitalWrite(led, HIGH);
   long delayValue = 1000000 / frequency / 2; // calculate the delay value between transitions
   //// 1 second's worth of microseconds, divided by the frequency, then split in half since
   //// there are two phases to each cycle
@@ -277,6 +278,6 @@ void buzz(int targetPin, long frequency, long length) {
     digitalWrite(targetPin, LOW); // write the buzzer pin low to pull back the diaphram
     delayMicroseconds(delayValue); // wait again or the calculated delay value
   }
-  digitalWrite(13, LOW);
+  digitalWrite(led, LOW);
 
 }
