@@ -13,13 +13,13 @@
 const int led = 13;
 
 void setup() {
-  pinMode(led,OUTPUT);
+  pinMode(13,OUTPUT);
 }
 
 void loop() {
   //led.blink(500);
-  analogWrite(led,255);
-  delay(1000);
-  analogWrite(led,0) ;
-  delay(1000);
+  digitalWrite(13,HIGH);
+  delay(200);
+  digitalWrite(13,LOW) ;
+  delay(200);
 }
