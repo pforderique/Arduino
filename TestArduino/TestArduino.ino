@@ -10,16 +10,16 @@
  
 
 //Blink led(13);
-const int led = 13;
+const int led = 10;
 
 void setup() {
-  pinMode(13,OUTPUT);
+  pinMode(led,OUTPUT);
 }
 
 void loop() {
   //led.blink(500);
-  digitalWrite(13,HIGH);
+  digitalWrite(led,HIGH);
   delay(200);
-  digitalWrite(13,LOW) ;
+  digitalWrite(led,LOW) ;
   delay(200);
 }
