@@ -10,16 +10,34 @@
  
 
 //Blink led(13);
+#include <Servo.h>;
+Servo myServo;
 const int led = 10;
+const int servoPin = 6;
 
 void setup() {
   pinMode(led,OUTPUT);
+  myServo.attach(servoPin);
 }
 
 void loop() {
-  //led.blink(500);
-  digitalWrite(led,HIGH);
+  //testLED(led);
+  sweepServo();
+}
+//------------------------ TEST METHODS ------------------------------
+void testLED(int pin){
+  digitalWrite(pin,HIGH);
   delay(200);
-  digitalWrite(led,LOW) ;
+  digitalWrite(pin,LOW) ;
   delay(200);
+}
+void sweepServo(){
+  for(int i=0; i<180; i++){
+    myServo.write(i);
+    delay(10);
+  }
+  for(int i=180; i>0; i--){
+    myServo.write(i);
+    delay(10);    
+  }
 }
